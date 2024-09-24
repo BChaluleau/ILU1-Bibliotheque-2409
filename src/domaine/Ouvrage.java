@@ -13,7 +13,7 @@ public class Ouvrage {
 
 	private int nbExemplaires = 0;
 
-	public Ouvrage(String titre, String auteur, String editeur, int annee, String isbn) {
+	protected Ouvrage(String titre, String auteur, String editeur, int annee, String isbn) {
 		this.titre = titre;
 		this.auteur = auteur;
 		this.editeur = editeur;
@@ -21,8 +21,9 @@ public class Ouvrage {
 		this.isbn = isbn;
 	}
 
-	public Exemplaire ajoutExemplaire(Exemplaire exemplaire) {
+	public Exemplaire ajoutExemplaire() {
 		if (nbExemplaires < NB_MAX_EXEMPLAIRES) {
+			Exemplaire exemplaire = new Exemplaire("COTE_" + (nbExemplaires + 1));
 			exemplaires[nbExemplaires] = exemplaire;
 			nbExemplaires++;
 			return exemplaire;

@@ -5,7 +5,7 @@ public class Exemplaire {
 	private boolean enLigne = true;
 	private String cote;
 
-	public Exemplaire(String cote) {
+	protected Exemplaire(String cote) {
 		this.cote = cote;
 	}
 

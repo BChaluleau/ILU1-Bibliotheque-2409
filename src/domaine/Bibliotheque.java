@@ -11,8 +11,9 @@ public class Bibliotheque {
 		ouvrages = new Ouvrage[nbOuvragesMaximum];
 	}
 
-	public Ouvrage ajouteOuvrage(Ouvrage ouvrage) {
+	public Ouvrage ajouteOuvrage(String titre, String auteur, String editeur, int annee, String isbn) {
 		if (nbOuvrages < nbOuvragesMax) {
+			Ouvrage ouvrage = new Ouvrage(titre, auteur, editeur, annee, editeur);
 			ouvrages[nbOuvrages] = ouvrage;
 			nbOuvrages++;
 			return ouvrage;
