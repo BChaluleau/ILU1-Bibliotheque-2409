@@ -29,4 +29,9 @@ public class Exemplaire {
 		this.enLigne = enLigne;
 	}
 
+	@Override
+	public String toString() {
+		return "Exemplaire [empruntable=" + empruntable + ", enLigne=" + enLigne + ", cote=" + cote + "]";
+	}
+
 }

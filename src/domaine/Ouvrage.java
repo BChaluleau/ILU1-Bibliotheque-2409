@@ -47,4 +47,16 @@ public class Ouvrage {
 		return titre;
 	}
 
+	@Override
+	public String toString() {
+		String description = "Ouvrage [titre=" + titre + ", auteur=" + auteur + ", editeur=" + editeur + ", annee="
+				+ annee + ", isbn=" + isbn + "]";
+		for (int i = 0; i < nbExemplaires; i++) {
+			Exemplaire exemplaire = exemplaires[i];
+			description += "\n" + exemplaire;
+
+		}
+		return description;
+	}
+
 }

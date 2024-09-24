@@ -15,4 +15,13 @@ public class Bibliotheque {
 		return ouvrages;
 	}
 
+	@Override
+	public String toString() {
+		String description = "Bibliotheque [";
+		for (int i = 0; i < nbOuvrages; i++) {
+			description += "\n" + ouvrages[i];
+		}
+		return description + "\n]";
+	}
+
 }
