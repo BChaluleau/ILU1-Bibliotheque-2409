@@ -11,6 +11,19 @@ public class Bibliotheque {
 		ouvrages = new Ouvrage[nbOuvragesMaximum];
 	}
 
+	public Ouvrage ajouteOuvrage(Ouvrage ouvrage) {
+		if (nbOuvrages < nbOuvragesMax) {
+			ouvrages[nbOuvrages] = ouvrage;
+			nbOuvrages++;
+			return ouvrage;
+		}
+		return null;
+	}
+
+	public int getNbOuvrages() {
+		return nbOuvrages;
+	}
+
 	public Ouvrage[] getOuvrages() {
 		return ouvrages;
 	}

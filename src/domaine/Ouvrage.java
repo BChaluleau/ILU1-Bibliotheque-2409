@@ -2,12 +2,14 @@ package domaine;
 
 public class Ouvrage {
 
+	private static int NB_MAX_EXEMPLAIRES = 100; // partagée par toutes les instances
+
 	private String titre;
 	private String auteur;
 	private String editeur;
 	private int annee;
 	private String isbn;
-	private Exemplaire[] exemplaires = new Exemplaire[100];
+	private Exemplaire[] exemplaires = new Exemplaire[NB_MAX_EXEMPLAIRES];
 
 	private int nbExemplaires = 0;
 
@@ -17,6 +19,15 @@ public class Ouvrage {
 		this.editeur = editeur;
 		this.annee = annee;
 		this.isbn = isbn;
+	}
+
+	public Exemplaire ajoutExemplaire(Exemplaire exemplaire) {
+		if (nbExemplaires < NB_MAX_EXEMPLAIRES) {
+			exemplaires[nbExemplaires] = exemplaire;
+			nbExemplaires++;
+			return exemplaire;
+		}
+		return null;
 	}
 
 	public int getAnnee() {
@@ -31,16 +42,8 @@ public class Ouvrage {
 		return editeur;
 	}
 
-	public Exemplaire[] getExemplaires() {
-		return exemplaires;
-	}
-
 	public String getIsbn() {
 		return isbn;
-	}
-
-	public int getNbExemplaires() {
-		return nbExemplaires;
 	}
 
 	public String getTitre() {
